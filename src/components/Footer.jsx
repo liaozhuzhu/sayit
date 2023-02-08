@@ -2,19 +2,16 @@ import React, {useState} from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faComment} from "@fortawesome/free-solid-svg-icons"
 
-function Footer() {
+function Footer({handleSubmit}) {
 
-    // handle the form submission and show the main page
-    const handleSubmit = (e) => {
-        //prevent the default action of the form
+    const footerSubmit = (e) => {
         e.preventDefault();
-        document.getElementById("main").style.display="block";
-        document.getElementById("home").style.display="none";
+        handleSubmit(false);
     }
 
     return (
         <section id="footer">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" id="form" onSubmit={footerSubmit}>
                 <input type="text" name="prompt" className="form-input" autoFocus autoComplete='off'/>
                 <button type="submit" className="form-btn"><FontAwesomeIcon icon={faComment} /></button>
             </form>

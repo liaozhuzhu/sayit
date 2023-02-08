@@ -1,16 +1,22 @@
 import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
 import "./styles.css";
-import Main from "./pages/Main.jsx";
 import { useState} from "react";
+import Home from "./pages/Home.jsx";
+import Main from "./pages/Main.jsx";
+
 
 function App() {
+
+  const [isHome, setIsHome] = useState(true);
+
+  const handleSubmit = (formHome) => {
+    setIsHome(formHome);
+  }
   
   return (
     <div className="App">
-      <Home/>
-      <Main/>
-      <Footer/>
+      {isHome ? <Home/> : <Main/>}
+      <Footer handleSubmit={handleSubmit}/>
     </div>
   );
 }
