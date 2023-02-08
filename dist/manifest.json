@@ -1,0 +1,16 @@
+{
+    "name": "SayIT",
+    "description": "Talk, chat, and learn without leaving the page!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "SayIt"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage",
+        "declarativeContent"
+    ]
+}
