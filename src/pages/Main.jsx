@@ -1,11 +1,17 @@
 import React from 'react'
+import {faUser} from "@fortawesome/free-solid-svg-icons"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
-function Main() {
+
+function Main({userText}) {
 
     return (
         <div id="main">
             <div id="chat-container"></div>
-            <h1 className="title-primary">Hello World</h1>
+            <div className="chat-box" id="user-chat-box">
+                <div className="profile-icon"><FontAwesomeIcon icon={faUser} /></div>
+                <p className="prompt">{userText}</p>
+            </div>
         </div>
     )
 }

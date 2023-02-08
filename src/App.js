@@ -8,14 +8,16 @@ import Main from "./pages/Main.jsx";
 function App() {
 
   const [isHome, setIsHome] = useState(true);
+  const [userText, setUserText] = useState("test");
 
-  const handleSubmit = (formHome) => {
+  const handleSubmit = (formHome, userText) => {
     setIsHome(formHome);
+    setUserText(userText);
   }
   
   return (
     <div className="App">
-      {isHome ? <Home/> : <Main/>}
+      {isHome ? <Home/> : <Main userText={userText}/>}
       <Footer handleSubmit={handleSubmit}/>
     </div>
   );

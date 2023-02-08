@@ -111,6 +111,35 @@ body {
   background-color: #202123;
 }
 
+.chat-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 25px;
+}
+
+.profile-icon {
+  color: #202123;
+  margin-right: auto;
+  background-color: #ececf2;
+  min-height: 30px;
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  border-radius: 3px;
+}
+
+.prompt {
+  width: 100%;
+  color: #ececf2;
+  font-size: 0.95rem;
+  text-align: left;
+  margin-left: 25px;
+  font-weight: 500;
+}
+
 /* ===== Sections ===== */
 #home {
   display: flex;
