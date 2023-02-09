@@ -11,7 +11,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-width: 450px;
-  min-height: 500px;
+  height: 550px;
+  overflow-y: hidden;
   background-color: #343541;
 }
 
@@ -111,6 +112,11 @@ body {
   background-color: #202123;
 }
 
+#chat-container {
+  overflow-y: scroll;
+  margin-bottom: 85px;
+}
+
 .chat-box {
   display: flex;
   justify-content: center;
@@ -160,21 +166,27 @@ body {
 /* ===== Sections ===== */
 #home {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10%;
   overflow-y: scroll;
+  height: 550px;
+  padding-top: 10%;
 }
 
 #main {
-  margin-bottom: 15%;
+  width: 100%;
+  outline: 5px solid red;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 550px;
 }
 
 #footer {
   position: fixed;
   bottom: 0;
-  margin-top: 100%;
+  margin-top: auto;
   width: 100%;
   background-color: #343541;
   color: #ececf2;
@@ -185,7 +197,7 @@ body {
   flex-direction: column;
   padding-top: 10px;
   padding-inline: 10px;
-  z-index: 2;
+  z-index: 0;
 }
 
 .footer-desc {

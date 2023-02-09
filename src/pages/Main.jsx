@@ -97,8 +97,8 @@ function Main({userText}) {
         // innerHTML to sayItResponse
         let testResponse = "Hello, I am SayIt! I am a chatbot that can answer your questions about the world around you. Ask me anything!";
         const uniqueId = generateUniqueId();
-        chatContainer.innerHTML += (createBox(false, testResponse, uniqueId)); 
-        chatContainer.scrollTop = chatContainer.scrollHeight + 50;    
+        chatContainer.innerHTML += (createBox(false, testResponse, uniqueId));
+        chatContainer.scrollTop = chatContainer.scrollHeight + 50;
     }
 
     useEffect(() => {
