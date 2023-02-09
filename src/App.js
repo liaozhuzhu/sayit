@@ -8,7 +8,7 @@ import Main from "./pages/Main.jsx";
 function App() {
 
   const [isHome, setIsHome] = useState(true);
-  const [userText, setUserText] = useState("test");
+  const [userText, setUserText] = useState("");
 
   const handleSubmit = (formHome, userText) => {
     setIsHome(formHome);

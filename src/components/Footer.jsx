@@ -6,7 +6,10 @@ function Footer({handleSubmit}) {
 
     const footerSubmit = (e) => {
         e.preventDefault();
-        handleSubmit(false, document.getElementById("user-input").value);
+        let userPrompt = document.getElementById("user-input").value;
+        form.reset();
+        if (userPrompt === "") return;
+        handleSubmit(false, userPrompt);
     }
 
     return (
@@ -15,7 +18,7 @@ function Footer({handleSubmit}) {
                 <input type="text" name="prompt" className="form-input" autoFocus autoComplete='off' id="user-input"/>
                 <button type="submit" className="form-btn"><FontAwesomeIcon icon={faComment} /></button>
             </form>
-            <a target="_blank" href="https://liaozhu.dev" className="link-primary">Liao Zhu© 2023</a>
+            <p className="footer-desc">SayIT! <a target="_blank" href="https://liaozhu.dev" className="link-primary footer-desc">Liao Zhu© 2023</a></p>
         </section>
     )
 }

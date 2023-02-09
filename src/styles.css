@@ -116,6 +116,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-inline: 25px;
+  padding-bottom: 25px;
 }
 
 .profile-icon {
@@ -129,6 +130,11 @@ body {
   align-items: center;
   font-size: 0.75rem;
   border-radius: 3px;
+}
+
+#sayit-icon {
+  max-height: 30px;
+  max-width: 30px;
 }
 
 .prompt {
@@ -168,4 +174,9 @@ body {
   flex-direction: column;
   padding-inline: 10px;
   z-index: 2;
+}
+
+.footer-desc {
+  font-size: 0.5rem;
+  margin: 5px;
 }
