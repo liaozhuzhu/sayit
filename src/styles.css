@@ -116,20 +116,31 @@ body {
   justify-content: center;
   align-items: center;
   padding-inline: 25px;
-  padding-bottom: 25px;
+  padding-block: 25px;
+}
+
+#sayit-box {
+  background-color: #40414f;
+}
+
+.chat {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  width: 100%;
 }
 
 .profile-icon {
   color: #202123;
   margin-right: auto;
   background-color: #ececf2;
-  min-height: 30px;
-  min-width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.75rem;
-  border-radius: 3px;
+  max-height: 30px;
+  max-width: 30px;
+}
+
+#user-icon {
+  width: 100%;
+  height: 100%;
 }
 
 #sayit-icon {
@@ -157,7 +168,7 @@ body {
 }
 
 #main {
-  margin-top: 10%;
+  margin-bottom: 15%;
 }
 
 #footer {
@@ -172,6 +183,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 10px;
   padding-inline: 10px;
   z-index: 2;
 }
