@@ -1,12 +1,10 @@
 import {useEffect, useState} from 'react'
-import {faUser} from "@fortawesome/free-solid-svg-icons"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { Configuration, OpenAIApi } from "openai";
 
 
 function Main({userText}) {
-    const [sayItResponse, setSayItResponse] = useState("");
-    const apiKey = "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";
+
+    let apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
     let loadInterval;
 
@@ -50,15 +48,12 @@ function Main({userText}) {
         let responseText;
         if (response.status === 200) {
             responseText = response.data.choices[0].text;
-            setSayItResponse(responseText);
         } else {
             console.log("Error: " + response.status);
             responseText = "Sorry, something went wrong. Please try again later.";
-            setSayItResponse(responseText);
         }
         clearInterval(loadInterval);
         document.getElementById(uniqueId).innerHTML = responseText;
-        console.log(responseText);
         chatContainer.scrollTop = chatContainer.scrollHeight + 50;
     }
 
@@ -129,28 +124,18 @@ function Main({userText}) {
 
     useEffect(() => {
         document.getElementById("chat-container").innerHTML += (createBox(true, userText, ""));
-        if (userText.toLowerCase() === "hi" || userText.toLowerCase() === "hello" || userText.toLowerCase() === "hey") {
+        if (userText.toLowerCase() === "hi" || userText.toLowerCase() === "hello" || userText.toLowerCase() === "hey" || userText.toLowerCase() === "hi!" || userText.toLowerCase() === "hello!" || userText.toLowerCase() === "hey!") {
             generateGreeting();
             return;
         }
         // testQuestion();
-        askQuestion(userText);
+        // askQuestion(userText);
     }, [userText])
 
 
     return (
         <div id="main">
             <div id="chat-container"></div>
-            {/* <div className="chat-box" id="user-chat-box">
-                <div className="profile-icon"></div>
-                <div className="prompt">{userText}</div>
-            </div> */}
-            {/* <div className="chat-box" id="user-chat-box">
-                <div className="profile-icon">
-                    <img src="assets/sayit.png" id="sayit-icon"/>
-                </div>
-                <div className="prompt" id="sayit-response">{sayItResponse}</div>
-            </div> */}
         </div>
     )
 }

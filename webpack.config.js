@@ -2,7 +2,11 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require('webpack')
+const dotenv = require('dotenv')
 
+// this will update the process.env with environment variables in .env file
+dotenv.config();
 
 module.exports = {
     entry: './src/index.js',
@@ -54,6 +58,8 @@ module.exports = {
                     from: "public"
                 },
             ]
-        })
+        }),
+        // fix the process is not defined error
+        new webpack.EnvironmentPlugin( { ...process.env } )
     ],
 };

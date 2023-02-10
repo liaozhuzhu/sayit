@@ -7,6 +7,11 @@
         "default_popup": "popup.html",
         "default_title": "SayIt"
     },
+    "icons": {
+        "16": "assets/sayit.png",
+        "48": "assets/sayit.png",
+        "128": "assets/sayit.png"
+    },
     "permissions": [
         "scripting",
         "activeTab",
