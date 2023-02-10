@@ -106,6 +106,7 @@ function Main({userText}) {
         let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
         let chatContainer = document.getElementById("chat-container");
         chatContainer.innerHTML += (createBox(false, randomGreeting, uniqueId));
+        chatContainer.scrollTop = chatContainer.scrollHeight + 50;
     }
 
     // test function to avoid api calls
