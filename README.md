@@ -8,12 +8,11 @@ To try the extension, download the [build folder](https://drive.google.com/drive
 (yes I'm cheap because I didn't want to pay the $5 to host it officially since my OpenAI key will expire in 3 months anyway)
 
 ## Example Usage
-![Screenshot of extension0](./readmeImages/home.png)
-![Screenshot of extension1](./readmeImages/Screen%20Shot%202023-02-09%20at%209.25.36%20PM.png)
-![Screenshot of extension2](./readmeImages/Screen%20Shot%202023-02-09%20at%209.27.07%20PM.png)
-
-
-
+<img src="./readmeImages/home.png" width="200px" height="250px"/>
+<br/>
+<img src="./readmeImages/main1.png" width="200px" height="250px"/>
+<br/>
+<img src="./readmeImages/main2.png" width="200px" height="250px"/>
 
 ## Credits
 Inspired by: [Wordsmith](https://github.com/paaatrrrick/wordsmith-client) by [paaatrrrick](https://github.com/paaatrrrick)
