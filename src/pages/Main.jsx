@@ -8,8 +8,10 @@ function Main({userText}) {
     const [sayItResponse, setSayItResponse] = useState("");
     const apiKey = "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";
 
-    const loadResponse = () => {
-        let response = document.getElementById("sayit-response");
+    let loadInterval;
+
+    const loadResponse = (uniqueId) => {
+        let response = document.getElementById(uniqueId);
         let dots = document.createElement("span");
         response.innerHTML = "";
         dots.id = "dots";
@@ -24,34 +26,42 @@ function Main({userText}) {
         }, 500);
     }
 
-    // const askQuestion = async (question) => {
-    //     loadResponse();
-    //     console.log("Calling OpenAI API...");
-    //     const config = new Configuration({
-    //         apiKey: apiKey,
-    //     });
-    //     const openai = new OpenAIApi(config);
-    //     const prompt = `Q: ${question}\nA: `;
-    //     const response = await openai.createCompletion({
-    //         model: "text-davinci-003",
-    //         prompt: prompt,
-    //         temperature: 1,
-    //         max_tokens: 300,
-    //         top_p: 1,
-    //         frequency_penalty: 0,
-    //         presence_penalty: 0,
-    //     });
-    //     // check if response was successful
-    //     if (response.status === 200) {
-    //         let responseText = response.data.choices[0].text;
-    //         setSayItResponse(responseText);
-    //     } else {
-    //         console.log("Error: " + response.status);
-    //         let responseText = "Sorry, something went wrong. Please try again later.";
-    //         setSayItResponse(responseText);
-    //     }
-    // }
-    let chatBox = document.createElement("div");
+    const askQuestion = async (question) => {
+        let chatContainer = document.getElementById("chat-container");
+        const uniqueId = generateUniqueId();
+        chatContainer.innerHTML += (createBox(false, "", uniqueId));
+        loadResponse(uniqueId);
+        console.log("Calling OpenAI API...");
+        const config = new Configuration({
+            apiKey: apiKey,
+        });
+        const openai = new OpenAIApi(config);
+        const prompt = `Q: ${question}\nA: `;
+        const response = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: prompt,
+            temperature: 1,
+            max_tokens: 300,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+        });
+        // check if response was successful
+        let responseText;
+        if (response.status === 200) {
+            responseText = response.data.choices[0].text;
+            setSayItResponse(responseText);
+        } else {
+            console.log("Error: " + response.status);
+            responseText = "Sorry, something went wrong. Please try again later.";
+            setSayItResponse(responseText);
+        }
+        clearInterval(loadInterval);
+        document.getElementById(uniqueId).innerHTML = responseText;
+        console.log(responseText);
+        chatContainer.scrollTop = chatContainer.scrollHeight + 50;
+    }
+
     const createBox = (isUser, message, uniqueId) => {
         if (isUser) {
             return (
@@ -102,9 +112,9 @@ function Main({userText}) {
     }
 
     useEffect(() => {
-        // askQuestion(userText);
         document.getElementById("chat-container").innerHTML += (createBox(true, userText, ""));
-        testQuestion();
+        // testQuestion();
+        askQuestion(userText);
     }, [userText])
 
 

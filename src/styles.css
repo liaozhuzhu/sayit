@@ -7,6 +7,11 @@
   font-family: 'Noto Sans', sans-serif;
 }
 
+/* add smooth scrolling to the page */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -115,11 +120,12 @@ body {
 #chat-container {
   overflow-y: scroll;
   margin-bottom: 85px;
+  width: 100%;
 }
 
 .chat-box {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   padding-inline: 25px;
   padding-block: 25px;
