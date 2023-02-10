@@ -123,7 +123,9 @@ function Main({userText}) {
     }
 
     useEffect(() => {
+        let chatContainer = document.getElementById("chat-container");
         document.getElementById("chat-container").innerHTML += (createBox(true, userText, ""));
+        chatContainer.scrollTop = chatContainer.scrollHeight + 50;
         if (userText.toLowerCase() === "hi" || userText.toLowerCase() === "hello" || userText.toLowerCase() === "hey" || userText.toLowerCase() === "hi!" || userText.toLowerCase() === "hello!" || userText.toLowerCase() === "hey!") {
             generateGreeting();
             return;
