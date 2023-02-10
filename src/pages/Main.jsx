@@ -129,7 +129,7 @@ function Main({userText}) {
             return;
         }
         // testQuestion();
-        // askQuestion(userText);
+        askQuestion(userText);
     }, [userText])
 
 
