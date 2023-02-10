@@ -133,7 +133,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: top;
-  width: 100%;
+  /* make text overflow go to the next line */
+  word-break: break-word;
+  /* make the text wrap around the box */
 }
 
 .profile-icon {
@@ -175,7 +177,6 @@ body {
 
 #main {
   width: 100%;
-  outline: 5px solid red;
   display: flex;
   align-items: center;
   flex-direction: column;
