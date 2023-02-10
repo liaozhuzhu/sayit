@@ -7,8 +7,6 @@ const dotenv = require('dotenv')
 
 dotenv.config();
 
-
-
 module.exports = {
     entry: './src/index.js',
     output: {
