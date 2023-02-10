@@ -98,6 +98,22 @@ function Main({userText}) {
         return `id-${timestamp}-${hexadecimalString}`;
     }
 
+    // create a function that generates different greeting messages
+    const generateGreeting = () => {
+        let greetings = 
+            [
+                "Hello, I am SayIt! I am a chatbot that can answer your questions about the world around you. Ask me anything!",
+                "Hi, my name is SayIt! How are you?", 
+                "Hey, I'm SayIt! How can I help?", 
+                "Hello, SayIt here 👋",
+            ];
+        let uniqueId = generateUniqueId();
+        let randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+        let chatContainer = document.getElementById("chat-container");
+        chatContainer.innerHTML += (createBox(false, randomGreeting, uniqueId));
+    }
+
+    // test function to avoid api calls
     const testQuestion = () => {
         let chatContainer = document.getElementById("chat-container");
         console.log("Fake calling OpenAI API...");
@@ -113,6 +129,10 @@ function Main({userText}) {
 
     useEffect(() => {
         document.getElementById("chat-container").innerHTML += (createBox(true, userText, ""));
+        if (userText.toLowerCase() === "hi" || userText.toLowerCase() === "hello" || userText.toLowerCase() === "hey") {
+            generateGreeting();
+            return;
+        }
         // testQuestion();
         askQuestion(userText);
     }, [userText])
