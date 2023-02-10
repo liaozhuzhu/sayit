@@ -11,7 +11,7 @@ function Home() {
                     <p>"Say something!"</p>
                 </div>
                 <div className="box">
-                    <p>Does everything ChatGPT can do</p>
+                    <p>Uses the GPT-3 davinci model!</p>
                 </div>
                 <div className="box">
                     <p>"How do I say something?"</p>
