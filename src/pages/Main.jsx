@@ -9,6 +9,7 @@ function Main({userText}) {
     let loadInterval;
 
     const loadResponse = (uniqueId) => {
+        let chatContainer = document.getElementById("chat-container");
         let response = document.getElementById(uniqueId);
         let dots = document.createElement("span");
         response.innerHTML = "";
@@ -22,6 +23,7 @@ function Main({userText}) {
                 dots.innerHTML += ".";
             }
         }, 500);
+        chatContainer.scrollTop = chatContainer.scrollHeight + 50;
     }
 
     const askQuestion = async (question) => {
