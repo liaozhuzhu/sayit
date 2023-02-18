@@ -121,6 +121,12 @@ body {
   overflow-y: scroll;
   margin-bottom: 85px;
   width: 100%;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#chat-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .chat-box {
@@ -176,7 +182,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow-y: scroll;
   height: 550px;
   padding-top: 10%;
 }
@@ -186,7 +191,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow-y: scroll;
   height: 550px;
 }
 
